@@ -36,7 +36,7 @@ const ElectionPage = () => {
     useEffect(() => {
         const fetchElectionData = async () => {
             try {
-                const response = await axios.get(`https://decentralized-voting-system-backend.onrender.com/dashboard/user/getElectionDetails`, {
+                const response = await axios.get(`https://dvsb.onrender.com/dashboard/user/getElectionDetails`, {
                     params: { electionName: election.electionName, }
                 });
 
@@ -54,7 +54,7 @@ const ElectionPage = () => {
 
     const handleVote = async (candidateFullName) => {
         setIsVoting(true);
-        await axios.post('https://decentralized-voting-system-backend.onrender.com/dashboard/user/vote', {
+        await axios.post('https://dvsb.onrender.com/dashboard/user/vote', {
             electionName: election.electionName,
             candidateName: candidateFullName,
             userId: localStorage.getItem('userId')

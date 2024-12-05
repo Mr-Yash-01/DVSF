@@ -37,7 +37,7 @@ const Signup = () => {
     if (isEmpty()) {
 
       if (validateForm()) {
-        await axios.post('https://decentralized-voting-system-backend.onrender.com/signup', {
+        await axios.post('https://dvsb.onrender.com/signup', {
           firstName: firstName,
           lastName: lastName,
           email: email,

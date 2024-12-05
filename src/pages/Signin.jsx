@@ -37,7 +37,7 @@ const Signin = () => {
     setIsLoading(true);
     if (isEmpty()) {
       if (validateEmailandPassword()) {
-        await axios.post('https://decentralized-voting-system-backend.onrender.com/signin', {
+        await axios.post('https://dvsb.onrender.com/signin', {
           email: email,
           password: password
         }).then((response) => {

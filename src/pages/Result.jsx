@@ -18,7 +18,7 @@ const Result = () => {
         const fetchElectionData = async () => {
             try {
                 // Fetch election data from the server
-                const response = await axios.get(`https://decentralized-voting-system-backend.onrender.com/dashboard/user/getResult`, {
+                const response = await axios.get(`https://dvsb.onrender.com/dashboard/user/getResult`, {
                     params: {
                         electionName: election.electionName,
                     }
