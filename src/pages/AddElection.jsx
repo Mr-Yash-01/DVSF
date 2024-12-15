@@ -76,7 +76,7 @@ const AddElection = () => {
     };
 
 
-    const response = await axios.post('http://localhost:3000/dashboard/admin/addElection', electionData);
+    const response = await axios.post('https://dvsb.onrender.com/dashboard/admin/addElection', electionData);
     
     setIsUploading(false);
 

@@ -49,7 +49,7 @@ const SigninCard = () => {
     if (isEmpty()) {
       if (validateEmailandPassword()) {
         try {
-          const response = await axios.post('http://localhost:3000/signin/admin', { email, password });
+          const response = await axios.post('https://dvsb.onrender.com/signin/admin', { email, password });
           if (response.status === 200 ) {
             navigate('/adminDashboard', { replace: true });
           }
@@ -91,7 +91,7 @@ const SigninCard = () => {
     }
     
     try {
-      const response = await axios.post('http://localhost:3000/signin/otp', { voterId });
+      const response = await axios.post('https://dvsb.onrender.com/signin/otp', { voterId });
       if (response.status === 200) {
       alert('OTP sent successfully.');
       } else {
@@ -114,7 +114,7 @@ const SigninCard = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/signin/voter', { voterId, OTP });
+      const response = await axios.post('https://dvsb.onrender.com/signin/voter', { voterId, OTP });
       if (response.status === 200) {
         localStorage.setItem('voterId', voterId); 
         navigate('/voterDashboard', { replace: true });

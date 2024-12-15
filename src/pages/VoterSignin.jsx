@@ -26,7 +26,7 @@ const VoterSignin = () => {
     try {
       if (isAdmin) {
         // Admin Login Logic
-        const response = await axios.post('http://localhost:3000/adminSignin', {
+        const response = await axios.post('https://dvsb.onrender.com/adminSignin', {
           email,
           password,
         });
@@ -35,7 +35,7 @@ const VoterSignin = () => {
         navigate('/adminDashboard', { replace: true });
       } else {
         // Voter Login Logic
-        const response = await axios.post('http://localhost:3000/voterSignin', {
+        const response = await axios.post('https://dvsb.onrender.com/voterSignin', {
           voterId,
         });
         localStorage.setItem('voterId', voterId);

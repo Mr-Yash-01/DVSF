@@ -36,7 +36,7 @@ const ElectionPage = () => {
     useEffect(() => {
         const fetchElectionData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/dashboard/user/getElectionDetails`, {
+                const response = await axios.get(`https://dvsb.onrender.com/dashboard/user/getElectionDetails`, {
                     params: { electionName: election.electionName, }
                 });
 
@@ -58,7 +58,7 @@ const ElectionPage = () => {
         console.log("clicked");
         
         
-        await axios.post('http://localhost:3000/dashboard/user/vote', {
+        await axios.post('https://dvsb.onrender.com/dashboard/user/vote', {
             electionName: election.electionName,
             candidateName: candidateFullName,
             userId: localStorage.getItem('voterId')

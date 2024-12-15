@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const response = await axios.get('http://localhost:3000/dashboard/admin/getElections');
+        const response = await axios.get('https://dvsb.onrender.com/dashboard/admin/getElections');
         const elections = response.data.elections;
 
         // Validate the data structure
