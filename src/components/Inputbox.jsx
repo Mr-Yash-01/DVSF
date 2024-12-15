@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 
 const Inputbox = forwardRef(({ title, hint, onchange, inputId, onKeyDown, type = "text" }, ref) => {
     return (
-        <div>
+        <div className="text-left text-slate-800">
             <h1 className="mt-2 ml-2">
                 {title}
             </h1>

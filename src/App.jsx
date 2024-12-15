@@ -7,6 +7,7 @@ import AdminDashboard from "./pages/AdminDashboard"
 import AddElection from "./pages/AddElection"
 import ElectionPage from "./pages/ElectionPage"
 import Result from "./pages/Result"
+import Form from "./pages/Signin"
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/" element={<Signin/>} />
+        <Route path="/" element={<Form/>} />
         <Route path="/voterDashboard" element={<VoterDashBoard/>} />
         <Route path="/adminDashboard" element={<AdminDashboard/>} />
         <Route path="/addElection" element={<AddElection/>} />

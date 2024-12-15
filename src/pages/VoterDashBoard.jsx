@@ -22,9 +22,10 @@ const VoterDashboard = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const response = await axios.get('https://dvsb.onrender.com/dashboard/admin/getElections');
+        const response = await axios.get('http://localhost:3000/dashboard/admin/getElections');
         const elections = response.data.elections;
-
+        console.log(elections);
+        
         // Validate the data structure
         if (!Array.isArray(elections)) {
           console.error('Expected an array of elections but received:', elections);
@@ -60,7 +61,7 @@ const VoterDashboard = () => {
       <div className='flex flex-row gap-4 px-4 justify-center'>
         <div className='flex flex-grow justify-center'><Heading payload='Voter Dashboard' /></div>
         <button onClick={() =>
-            {localStorage.removeItem('userId');
+            {localStorage.removeItem('voterId');
             navigate('/',{replace:true})}}>
             <img src='/icons8-logout-96.png' className='w-8 h-8' alt='logout Logo' />
           </button>

@@ -36,7 +36,7 @@ const ElectionPage = () => {
     useEffect(() => {
         const fetchElectionData = async () => {
             try {
-                const response = await axios.get(`https://dvsb.onrender.com/dashboard/user/getElectionDetails`, {
+                const response = await axios.get(`http://localhost:3000/dashboard/user/getElectionDetails`, {
                     params: { electionName: election.electionName, }
                 });
 
@@ -54,10 +54,14 @@ const ElectionPage = () => {
 
     const handleVote = async (candidateFullName) => {
         setIsVoting(true);
-        await axios.post('https://dvsb.onrender.com/dashboard/user/vote', {
+        console.log(localStorage.getItem('voterId'));
+        console.log("clicked");
+        
+        
+        await axios.post('http://localhost:3000/dashboard/user/vote', {
             electionName: election.electionName,
             candidateName: candidateFullName,
-            userId: localStorage.getItem('userId')
+            userId: localStorage.getItem('voterId')
         }).then((response) => {
             setIsVoting(false);
             setAbleToVote(false);
