@@ -1,13 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import Inputbox from '../components/Inputbox';
-import Heading from '../components/Heading';
-import Button from '../components/Button';
-import Loader from '../components/Loader';
+import React, { useState, useRef, useEffect } from 'react'; // Importing necessary hooks from React
+import styled from 'styled-components'; // Importing styled-components for styling
+import axios from 'axios'; // Importing axios for making HTTP requests
+import { useNavigate } from 'react-router-dom'; // Importing useNavigate for navigation
+import Inputbox from '../components/Inputbox'; // Importing Inputbox component
+import Heading from '../components/Heading'; // Importing Heading component
+import Button from '../components/Button'; // Importing Button component
+import Loader from '../components/Loader'; // Importing Loader component
 
 const SigninCard = () => {
+  // State variables for form inputs and loading states
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [voterId, setVoterId] = useState('');
@@ -16,9 +17,11 @@ const SigninCard = () => {
   const [sendVoteLoading, setSendVoteLoading] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
 
+  // Refs for input validation
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
 
+  // Hook for navigation
   const navigate = useNavigate();
 
   // Function to validate the email and password
@@ -33,7 +36,7 @@ const SigninCard = () => {
     return email !== '' && password !== '';
   }
 
-  // Function to handle form submission
+  // Function to handle form submission for admin sign-in
   const handleAdminSignin = async () => {
     setIsLoading(true);
     if (!email || !password) {
@@ -83,6 +86,7 @@ const SigninCard = () => {
     return voterId !== '' && OTP !== '';
   }
   
+  // Function to handle sending OTP
   const handleSendOTP = async () => {
     setSendVoteLoading(true);
     if (!voterId || !validateVoterId()) {
@@ -93,9 +97,9 @@ const SigninCard = () => {
     try {
       const response = await axios.post('https://dvsb.onrender.com/signin/otp', { voterId });
       if (response.status === 200) {
-      alert('OTP sent successfully.');
+        alert('OTP sent successfully.');
       } else {
-      alert('Failed to send OTP. Please try again.');
+        alert('Failed to send OTP. Please try again.');
       }
     } catch (error) {
       console.error('Error sending OTP:', error);
@@ -105,6 +109,7 @@ const SigninCard = () => {
     }
   };
 
+  // Function to handle voter sign-in
   const handleVoterSignin = async () => {
     console.log('clicked');
     
@@ -225,6 +230,7 @@ const SigninCard = () => {
   );
 }
 
+// Styled component for the wrapper
 const StyledWrapper = styled.div`
   .flip-card {
     background-color: transparent;
@@ -305,4 +311,4 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export default SigninCard;
+export default SigninCard; // Exporting the SigninCard component
