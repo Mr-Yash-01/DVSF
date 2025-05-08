@@ -1,28 +1,23 @@
-# Voting System Frontend
+# Decentralized Voting System Frontend
 
-This project is a frontend for a decentralized voting system built with React and Vite. It includes hot module replacement (HMR) and some ESLint rules for code quality.
+The frontend for the Decentralized Voting System is built using React and styled with Tailwind CSS. This application allows users to interact with the voting system via MetaMask. Voters can view available elections, cast their votes, and check results directly from the blockchain.
 
-## Available Plugins
+## ✨ Features
 
-Currently, two official plugins are available:
+- 🗳️ **Vote in Elections**: Users can participate in elections by casting their votes.
+- 📊 **View Election Results**: After voting is closed, the results are displayed automatically.
+- 📅 **Upcoming Elections**: Users can view elections scheduled for the future.
+- 🏛️ **Admin Management**: Admins can manage elections, including creating, scheduling, and ending elections.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧪 Tech Stack
 
-## Getting Started
+- **Frontend**: React.js, Tailwind CSS
+- **Blockchain**: MetaMask, Ethereum
+- **Libraries**: Ethers.js, Web3.js
 
-To get started with the project, follow these steps:
+## 🚀 Getting Started
 
-1. Clone the repository
-2. Install dependencies using `npm install`
-3. Start the development server with `npm run dev`
-
-## Project Structure
-
-- `src/` - Contains the source code of the application
-- `public/` - Contains static assets
-- `README.md` - Project documentation
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
+- git clone https://github.com/Mr-Yash-01/DVSF.git
+- cd voting-system-frontend
+- npm install
+- npm start
